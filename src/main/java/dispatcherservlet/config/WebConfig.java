@@ -1,8 +1,10 @@
 package dispatcherservlet.config;
 
 
+import dispatcherservlet.HomeController;
 import dispatcherservlet.aop.MyInterceptor;
 import org.springframework.context.annotation.*;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -17,8 +19,9 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 @ComponentScan(basePackages = {"dispatcherservlet"})
 //WebConfig配置类中主要是内容是启用组件扫描，配置视图解析器，配置静态资源的处理。
-public class WebConfig extends WebMvcConfigurerAdapter {
 
+//@Import(JavaConfig.class)
+public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public ViewResolver viewResolver() {
@@ -28,7 +31,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         resolver.setExposeContextBeansAsAttributes(true);
         return resolver;
     }
-
 
 
     @Override

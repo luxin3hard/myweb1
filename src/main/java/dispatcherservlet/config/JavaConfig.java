@@ -9,10 +9,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * Created by lx on 10/04/2018.
  */
 @Configuration
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy()
 public class JavaConfig {
-    @Bean
-    public MyInterceptor interceptor() {
-        return new MyInterceptor();
-    }
+
 }
