@@ -31,6 +31,7 @@ public class MyInterceptor {
     @Around("execution(* dispatcherservlet.MyService.*(..))")
     public void before(ProceedingJoinPoint joinPoint) {
         System.out.println("232132");
+
         try {
             joinPoint.proceed(joinPoint.getArgs());
         } catch (Throwable throwable) {
